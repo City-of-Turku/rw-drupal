@@ -3,12 +3,27 @@
 The recycling system backend is a Drupal Commerce installation. This 
 repository will, soon, contain the details of the setup & configuration.
 
-# Drupal Commerce setup
+This now contains a preliminary site installation profile and drush makefile to 
+prepare a suitable Drupal site.
 
-The Drupal setup is pretty much a basic Drupal Commerce configuration.
+# Requirements
+
+* php
+* drush
+
+# Prepare site profile
+
+* make
+
+# Prepare PostgreSQL database
+
+* createuser --pwprompt --encrypted --no-createrole --no-createdb rwdrupal
+* createdb --encoding=UTF8 --owner=rwdrupal rwdrupal
+
+# Create site
+
+* make pgsql-site
 
 # Services configuration
-
-Modules: services, services_views, commerce_services
 
 See services-configuration-export.txt
