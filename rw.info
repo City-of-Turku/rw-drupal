@@ -1,0 +1,46 @@
+name = RW Profile
+description = Resurssiviisas Drupal profile
+core = 7.x
+
+exclusive = TRUE
+
+dependencies[] = block
+dependencies[] = contextual
+dependencies[] = dashboard
+dependencies[] = help
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = taxonomy
+dependencies[] = dblog
+dependencies[] = shortcut
+dependencies[] = toolbar
+dependencies[] = overlay
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = rdf
+
+dependencies[] = module_filter
+dependencies[] = pathauto
+dependencies[] = views
+dependencies[] = entity
+dependencies[] = rules
+dependencies[] = services
+dependencies[] = services_views
+dependencies[] = commerce
+dependencies[] = commerce_services
+dependencies[] = commerce_stock
+dependencies[] = media
+dependencies[] = transliteration
+dependencies[] = search_api
+dependencies[] = search_api_db
+dependencies[] = facetapi
+dependencies[] = jquery_update
+dependencies[] = entityreference
+dependencies[] = physical
+dependencies[] = message
+
+
