@@ -4,6 +4,7 @@ core = 7.x
 
 exclusive = TRUE
 
+; Core
 dependencies[] = block
 dependencies[] = contextual
 dependencies[] = dashboard
@@ -23,24 +24,61 @@ dependencies[] = field_ui
 dependencies[] = file
 dependencies[] = rdf
 
+; Extras
+dependencies[] = ctools
 dependencies[] = module_filter
 dependencies[] = pathauto
 dependencies[] = views
+dependencies[] = views_ui
+dependencies[] = views_content
+dependencies[] = page_manager
 dependencies[] = entity
 dependencies[] = rules
-dependencies[] = services
-dependencies[] = services_views
-dependencies[] = commerce
-dependencies[] = commerce_services
-dependencies[] = commerce_stock
 dependencies[] = media
 dependencies[] = transliteration
-dependencies[] = search_api
-dependencies[] = search_api_db
-dependencies[] = facetapi
-dependencies[] = jquery_update
 dependencies[] = entityreference
 dependencies[] = physical
 dependencies[] = message
+dependencies[] = message_notify
 
+; Search
+dependencies[] = search_api
+dependencies[] = search_api_db
+dependencies[] = search_api_views
+dependencies[] = facetapi
+dependencies[] = search_api_facetapi
 
+; Commerce core
+dependencies[] = commerce
+dependencies[] = commerce_ui
+dependencies[] = commerce_cart
+dependencies[] = commerce_checkout
+dependencies[] = commerce_customer
+dependencies[] = commerce_customer_ui
+dependencies[] = commerce_line_item
+dependencies[] = commerce_line_item_ui
+dependencies[] = commerce_price
+dependencies[] = commerce_order
+dependencies[] = commerce_order_ui
+dependencies[] = commerce_payment_ui
+dependencies[] = commerce_shipping
+dependencies[] = commerce_shipping_ui
+
+; Commerce extras
+dependencies[] = commerce_stock
+dependencies[] = commerce_addressbook
+
+; Services
+dependencies[] = services
+dependencies[] = services_views
+dependencies[] = commerce_services
+
+; Theme related
+dependencies[] = jquery_update
+
+; Image
+dependencies[] = imagecache_actions
+dependencies[] = imagecache_autorotate
+
+; i18n
+dependencies[] = i18n

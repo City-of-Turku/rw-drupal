@@ -6,24 +6,35 @@ repository will, soon, contain the details of the setup & configuration.
 This now contains a preliminary site installation profile and drush makefile to 
 prepare a suitable Drupal site.
 
-# Requirements
+## Requirements
 
+* Apache
+* PostgreSQL (or MySQL if you so prefer)
 * php
 * drush
 
-# Prepare site profile
+## Prepare site profile
 
-* make
+* make rw
 
-# Prepare PostgreSQL database
+## Prepare PostgreSQL database
 
 * createuser --pwprompt --encrypted --no-createrole --no-createdb rwdrupal
+
+Give a suitable password at the prompt.
+
 * createdb --encoding=UTF8 --owner=rwdrupal rwdrupal
 
-# Create site
+## Create site
 
-* make pgsql-site
+* make pgsql-site DB=rwdrupal DBUSER=rwdrupal DBPASS=(what-you-set)
 
-# Services configuration
+# Configuration
+
+For now manual configuration is required. To be fixed.
+
+## Services configuration
 
 See services-configuration-export.txt
+
+
