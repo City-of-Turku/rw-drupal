@@ -63,6 +63,7 @@ dependencies[] = commerce_order_ui
 dependencies[] = commerce_payment_ui
 dependencies[] = commerce_shipping
 dependencies[] = commerce_shipping_ui
+dependencies[] = commerce_product_ui
 
 ; Commerce extras
 dependencies[] = commerce_stock
