@@ -1,8 +1,13 @@
-DB=rwdrupal
-DBUSER=rwdrupal
-DBPASS=rwdrupal123
-DBHOST=localhost
-SITE_EMAIL="example@example"
+DB:=rwdrupal
+DBUSER:=rwdrupal
+DBPASS:=rwdrupal123
+DBHOST:=localhost
+DBURL:=$(DBUSER):$(DBPASS)@localhost/$(DB)
+
+SITE_EMAIL?=""
+SITE_PASS?=DummyPassword123
+SITE_NAME?="ResurssiviisasKaupunki"
+SITE_ARGS:=--site-name=$(SITE_NAME) --account-mail=$(SITE_EMAIL) --account-name=root --account-pass=$(SITE_PASS)
 
 all: rw rw-profile
 
@@ -18,10 +23,10 @@ rw/profiles/rw/rw.info: rw.info rw.install rw.profile
 	cp rw.profile rw/profiles/rw/
 
 pgsql-site: rw-profile
-	cd rw && drush si rw --db-url=pgsql://$(DBUSER):$(DBPASS)@localhost/$(DB)
+	cd rw && drush si rw --db-url=pgsql://$(DBURL) $(SITE_ARGS)
 
 mysql-site: rw-profile
-	cd rw && drush si rw --db-url=mysql://$(DBUSER):$(DBPASS)@localhost/$(DB)
+	cd rw && drush si rw --db-url=mysql://$(DBURL) $(SITE_ARGS)
 
 sqlite-site: rw-profile
 	cd rw && drush si rw --db-url=sqlite://sites/default/test.ht.sqlite
