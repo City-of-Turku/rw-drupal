@@ -35,7 +35,25 @@ function rw_install() {
       'type' => 'page',
       'name' => st('Basic page'),
       'base' => 'node_content',
-      'description' => st("Use <em>basic pages</em> for your static content, such as an 'About us' page."),
+      'description' => st("Static content, such as an 'About us' page."),
+      'custom' => 1,
+      'modified' => 1,
+      'locked' => 0,
+    ),
+    array(
+      'type' => 'news',
+      'name' => st('News page'),
+      'base' => 'node_content',
+      'description' => st("Site news content"),
+      'custom' => 1,
+      'modified' => 1,
+      'locked' => 0,
+    ),
+    array(
+      'type' => 'location',
+      'name' => st('Location'),
+      'base' => 'node_content',
+      'description' => st("Warehouse"),
       'custom' => 1,
       'modified' => 1,
       'locked' => 0,
@@ -48,19 +66,85 @@ function rw_install() {
     node_add_body_field($type);
   }
 
+  // Blocks
+  $blocks = array(    
+    array(
+      'module' => 'user',
+      'delta' => 'login',
+      'theme' => 'bootstrap',
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'sidebar_first',
+      'pages' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'commerce_cart',
+      'delta' => 'cart',
+      'theme' => 'bootstrap',
+      'status' => 1,
+      'weight' => 1,
+      'region' => 'sidebar_first',
+      'pages' => '',
+      'cache' => -1,
+    )
+  );
+
+  $query = db_insert('block')->fields(array('module', 'delta', 'theme', 'status', 'weight', 'region', 'pages', 'cache'));
+  foreach ($blocks as $block) {
+    $query->values($block);
+  }
+  $query->execute();
+
+
+  // User & Roles
   $admin_role = new stdClass();
   $admin_role->name = 'administrator';
-  $admin_role->weight = 2;
+  $admin_role->weight = 10;
   user_role_save($admin_role);
+
   user_role_grant_permissions($admin_role->rid, array_keys(module_invoke_all('permission')));
   // Set this as the administrator role.
   variable_set('user_admin_role', $admin_role->rid);
 
+  $arole = new stdClass();
+  $arole->name = 'api';
+  $arole->weight = 2;
+  user_role_save($arole);
+
+  $prole = new stdClass();
+  $prole->name = 'producthandler';
+  $prole->weight = 3;
+  user_role_save($prole);
+
+  $orole = new stdClass();
+  $orole->name = 'orderhandler';
+  $orole->weight = 4;
+  user_role_save($orole);
+
+  $wrole = new stdClass();
+  $wrole->name = 'warehouse';
+  $wrole->weight = 5;
+  user_role_save($wrole);
+
   db_insert('users_roles')->fields(array('uid' => 1, 'rid' => $admin_role->rid))->execute();
 
-  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access content'));
-  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access content'));
+  // User role grants
+  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access content','view any commerce_product entity'));
+  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access content','access checkout'));
+
+  // API Role grants
+  user_role_grant_permissions($arole->rid, array('get any binary files', 'save file information','create commerce_product entities', 'view any commerce_product entity'));
+
+  // Product handler
+  user_role_grant_permissions($prole->rid, array('create commerce_product entities', 'view any commerce_product entity'));
+
+  // Order handler
+  user_role_grant_permissions($orole->rid, array('view any commerce_customer_profile entity', 'view any commerce_customer_profile entity of bundle billing', 'view any commerce_product entity'));
   
+  // Warehouse handler
+  user_role_grant_permissions($prole->rid, array('create commerce_product entities', 'view any commerce_product entity'));
+
   variable_set('admin_theme', 'seven');
   variable_set('node_admin_theme', '1');
 }
