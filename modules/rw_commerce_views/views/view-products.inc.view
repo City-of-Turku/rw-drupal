@@ -1,0 +1,100 @@
+<?php
+$view = new view();
+$view->name = 'products';
+$view->description = '';
+$view->tag = 'default';
+$view->base_table = 'commerce_product';
+$view->human_name = 'Products';
+$view->core = 7;
+$view->api_version = '3.0';
+$view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+/* Display: Master */
+$handler = $view->new_display('default', 'Master', 'default');
+$handler->display->display_options['title'] = 'Products';
+$handler->display->display_options['use_more_always'] = FALSE;
+$handler->display->display_options['access']['type'] = 'none';
+$handler->display->display_options['cache']['type'] = 'none';
+$handler->display->display_options['query']['type'] = 'views_query';
+$handler->display->display_options['exposed_form']['type'] = 'basic';
+$handler->display->display_options['pager']['type'] = 'full';
+$handler->display->display_options['pager']['options']['items_per_page'] = '20';
+$handler->display->display_options['style_plugin'] = 'grid';
+$handler->display->display_options['row_plugin'] = 'fields';
+/* Field: SKU Path ID */
+$handler->display->display_options['fields']['sku_1']['id'] = 'sku_1';
+$handler->display->display_options['fields']['sku_1']['table'] = 'commerce_product';
+$handler->display->display_options['fields']['sku_1']['field'] = 'sku';
+$handler->display->display_options['fields']['sku_1']['ui_name'] = 'SKU Path ID';
+$handler->display->display_options['fields']['sku_1']['label'] = '';
+$handler->display->display_options['fields']['sku_1']['exclude'] = TRUE;
+$handler->display->display_options['fields']['sku_1']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['sku_1']['link_to_product'] = 0;
+/* Field: Product title */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'commerce_product';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['ui_name'] = 'Product title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
+$handler->display->display_options['fields']['title']['alter']['path'] = 'product/[sku_1]';
+$handler->display->display_options['fields']['title']['element_type'] = 'h3';
+$handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+$handler->display->display_options['fields']['title']['link_to_product'] = 0;
+/* Field: SKU */
+$handler->display->display_options['fields']['sku']['id'] = 'sku';
+$handler->display->display_options['fields']['sku']['table'] = 'commerce_product';
+$handler->display->display_options['fields']['sku']['field'] = 'sku';
+$handler->display->display_options['fields']['sku']['ui_name'] = 'SKU';
+$handler->display->display_options['fields']['sku']['link_to_product'] = 0;
+/* Field: Commerce Product: Add to Cart form */
+$handler->display->display_options['fields']['add_to_cart_form']['id'] = 'add_to_cart_form';
+$handler->display->display_options['fields']['add_to_cart_form']['table'] = 'views_entity_commerce_product';
+$handler->display->display_options['fields']['add_to_cart_form']['field'] = 'add_to_cart_form';
+$handler->display->display_options['fields']['add_to_cart_form']['label'] = '';
+$handler->display->display_options['fields']['add_to_cart_form']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['add_to_cart_form']['show_quantity'] = 0;
+$handler->display->display_options['fields']['add_to_cart_form']['default_quantity'] = '1';
+$handler->display->display_options['fields']['add_to_cart_form']['combine'] = 1;
+$handler->display->display_options['fields']['add_to_cart_form']['display_path'] = 0;
+$handler->display->display_options['fields']['add_to_cart_form']['line_item_type'] = 0;
+/* Filter criterion: Commerce Product: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'commerce_product';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'product' => 'product',
+);
+/* Filter criterion: Commerce Product: Status */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'commerce_product';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = '1';
+
+/* Display: Page */
+$handler = $view->new_display('page', 'Page', 'page');
+$handler->display->display_options['path'] = 'products';
+$handler->display->display_options['menu']['type'] = 'normal';
+$handler->display->display_options['menu']['title'] = 'Products';
+$handler->display->display_options['menu']['name'] = 'main-menu';
+$translatables['products'] = array(
+  t('Master'),
+  t('Products'),
+  t('more'),
+  t('Apply'),
+  t('Reset'),
+  t('Sort by'),
+  t('Asc'),
+  t('Desc'),
+  t('Items per page'),
+  t('- All -'),
+  t('Offset'),
+  t('« first'),
+  t('‹ previous'),
+  t('next ›'),
+  t('last »'),
+  t('SKU'),
+  t('Page'),
+);
+

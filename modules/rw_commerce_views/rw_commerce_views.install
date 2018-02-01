@@ -1,0 +1,6 @@
+<?php
+
+function rw_commerce_views_install()
+{
+
+}

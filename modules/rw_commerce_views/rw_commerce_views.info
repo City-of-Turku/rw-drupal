@@ -1,0 +1,13 @@
+name = RW Commerce views
+description = Creates product views 
+core = 7.x
+package = RW
+
+dependencies[] = views
+dependencies[] = commerce
+dependencies[] = commerce_product
+
+files[] = rw_commerce_views.views_default.inc
+
+version = "7.x-0.1"
+
