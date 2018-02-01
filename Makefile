@@ -26,7 +26,10 @@ rw/sites/default/files:
 	mkdir -p rw/sites/default/files
 	chmod a+rw rw/sites/default/files
 
-default-files: rw/sites/default/files
+modules-install:
+	cp -a modules/rw_commerce_views rw/sites/all/modules/
+
+default-files: rw/sites/default/files modules-install
 
 pgsql-site: rw-profile default-files
 	cd rw && drush si rw --db-url=pgsql://$(DBURL) $(SITE_ARGS)
