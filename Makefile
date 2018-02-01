@@ -9,7 +9,7 @@ SITE_PASS?=DummyPassword123
 SITE_NAME?="ResurssiviisasKaupunki"
 SITE_ARGS:=--site-name=$(SITE_NAME) --account-mail=$(SITE_EMAIL) --account-name=root --account-pass=$(SITE_PASS)
 
-all: rw rw-profile
+all: rw rw-profile rw/sites/default/files
 
 rw: rw.info rw.make
 	drush make rw.make rw
@@ -22,13 +22,19 @@ rw/profiles/rw/rw.info: rw.info rw.install rw.profile
 	cp rw.install rw/profiles/rw/
 	cp rw.profile rw/profiles/rw/
 
-pgsql-site: rw-profile
+rw/sites/default/files:
+	mkdir -p rw/sites/default/files
+	chmod a+rw rw/sites/default/files
+
+default-files: rw/sites/default/files
+
+pgsql-site: rw-profile default-files
 	cd rw && drush si rw --db-url=pgsql://$(DBURL) $(SITE_ARGS)
 
-mysql-site: rw-profile
+mysql-site: rw-profile default-files
 	cd rw && drush si rw --db-url=mysql://$(DBURL) $(SITE_ARGS)
 
-sqlite-site: rw-profile
+sqlite-site: rw-profile default-files
 	cd rw && drush si rw --db-url=sqlite://sites/default/test.ht.sqlite
 
 mrproper:
