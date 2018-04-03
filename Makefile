@@ -11,7 +11,9 @@ SITE_ARGS:=--site-name=$(SITE_NAME) --account-mail=$(SITE_EMAIL) --account-name=
 
 all: rw rw-profile rw/sites/default/files
 
-rw: rw.info rw.make
+rw: rw.info rw.make rw-make modules-install
+
+rw-make: rw.make
 	drush make rw.make rw
 
 rw-profile: rw/profiles/rw/rw.info
@@ -26,10 +28,10 @@ rw/sites/default/files:
 	mkdir -p rw/sites/default/files
 	chmod a+rw rw/sites/default/files
 
-modules-install:
+modules-install: rw-make
 	cp -a modules/rw_commerce_views rw/sites/all/modules/
 
-default-files: rw/sites/default/files modules-install
+default-files: rw/sites/default/files
 
 pgsql-site: rw-profile default-files
 	cd rw && drush si rw --db-url=pgsql://$(DBURL) $(SITE_ARGS)
