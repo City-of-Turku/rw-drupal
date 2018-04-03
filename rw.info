@@ -76,6 +76,7 @@ dependencies[] = commerce_services
 
 ; Theme related
 dependencies[] = jquery_update
+dependencies[] = views_bootstrap
 
 ; Image
 dependencies[] = imagecache_actions
@@ -83,3 +84,7 @@ dependencies[] = imagecache_autorotate
 
 ; i18n
 dependencies[] = i18n
+
+; Custom modules
+dependencies[] = rw_commerce_views
+
