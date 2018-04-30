@@ -40,6 +40,8 @@ dependencies[] = entityreference
 dependencies[] = physical
 dependencies[] = message
 dependencies[] = message_notify
+dependencies[] = elements
+dependencies[] = telephone
 
 ; Search
 dependencies[] = search_api
@@ -64,10 +66,15 @@ dependencies[] = commerce_payment_ui
 dependencies[] = commerce_shipping
 dependencies[] = commerce_shipping_ui
 dependencies[] = commerce_product_ui
+dependencies[] = commerce_flat_rate
+
 
 ; Commerce extras
 dependencies[] = commerce_stock
+dependencies[] = commerce_stock_ui
+dependencies[] = commerce_stock_reserve
 dependencies[] = commerce_addressbook
+dependencies[] = commerce_addressbook_extra
 dependencies[] = commerce_packing_slip
 
 ; Services

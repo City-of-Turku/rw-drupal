@@ -45,3 +45,5 @@ projects[ckeditor] = 1.18
 projects[bootstrap] = 3.20
 projects[jquery_update] = 2.7
 projects[imagecache_actions] = 1.9
+projects[elements] = 1.5
+projects[telephone] = 1.0-alpha1
