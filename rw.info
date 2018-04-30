@@ -68,6 +68,7 @@ dependencies[] = commerce_product_ui
 ; Commerce extras
 dependencies[] = commerce_stock
 dependencies[] = commerce_addressbook
+dependencies[] = commerce_packing_slip
 
 ; Services
 dependencies[] = services
