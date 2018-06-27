@@ -47,3 +47,8 @@ projects[jquery_update] = 2.7
 projects[imagecache_actions] = 1.9
 projects[elements] = 1.5
 projects[telephone] = 1.0-alpha1
+projects[telephone_validation] = 1.0-beta1
+projects[date] = 2.10
+projects[email] = 1.3
+projects[field_default_token] = 1.3
+

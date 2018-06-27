@@ -42,6 +42,12 @@ dependencies[] = message
 dependencies[] = message_notify
 dependencies[] = elements
 dependencies[] = telephone
+dependencies[] = telephone_validation
+dependencies[] = date
+dependencies[] = email
+dependencies[] = ds
+dependencies[] = token
+dependencies[] = field_default_token
 
 ; Search
 dependencies[] = search_api
@@ -79,6 +85,7 @@ dependencies[] = commerce_packing_slip
 
 ; Services
 dependencies[] = services
+dependencies[] = rest_server
 dependencies[] = services_views
 dependencies[] = commerce_services
 
