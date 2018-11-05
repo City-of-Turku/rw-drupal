@@ -6,7 +6,7 @@ DBURL:=$(DBUSER):$(DBPASS)@localhost/$(DB)
 
 SITE_EMAIL?=""
 SITE_PASS?=DummyPassword123
-SITE_NAME?="ResurssiviisasKaupunki"
+SITE_NAME?="TavaratKiertoon"
 SITE_ARGS:=--site-name=$(SITE_NAME) --account-mail=$(SITE_EMAIL) --account-name=root --account-pass=$(SITE_PASS)
 
 all: rw rw-profile rw/sites/default/files
