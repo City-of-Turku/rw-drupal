@@ -1,9 +1,9 @@
 api = 2
-core = 7.59
+core = 7.60
 
 projects[drupal][type] = core
 
-projects[rules] = 2.10
+projects[rules] = 2.11
 projects[token] = 1.7
 projects[variable] = 2.5
 projects[views] = 3.20
@@ -28,21 +28,20 @@ projects[commerce_stock_reserve] =1.4
 projects[commerce_checkout_progress] = 1.5
 projects[commerce_message] = 1.0
 projects[commerce_packing_slip] = 1.2
-projects[search_api] = 1.24
-projects[search_api_db] = 1.6
+projects[search_api] = 1.25
+projects[search_api_db] = 1.7
 projects[facetapi] = 1.5
 projects[facetapi_pretty_paths] = 1.4
 projects[transliteration] = 3.2
-projects[addressfield] = 1.2
-projects[i18n] =1.24
-projects[libraries] = 2.3
-projects[ds] = 2.15
+projects[addressfield] = 1.3
+projects[i18n] =1.26
+projects[libraries] = 2.5
+projects[ds] = 2.16
 projects[panels] = 3.9
-projects[file_entity] = 2.20
-projects[media] = 2.19
+projects[file_entity] = 2.22
+projects[media] = 2.21
 projects[module_filter] = 2.1
 projects[ckeditor] = 1.18
-projects[bootstrap] = 3.20
 projects[jquery_update] = 2.7
 projects[imagecache_actions] = 1.9
 projects[elements] = 1.5
@@ -51,4 +50,5 @@ projects[telephone_validation] = 1.0-beta1
 projects[date] = 2.10
 projects[email] = 1.3
 projects[field_default_token] = 1.3
+projects[bootstrap] = 3.21
 
