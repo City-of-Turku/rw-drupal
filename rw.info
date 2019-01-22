@@ -31,6 +31,7 @@ dependencies[] = pathauto
 dependencies[] = views
 dependencies[] = views_ui
 dependencies[] = views_content
+dependencies[] = views_bulk_operations
 dependencies[] = page_manager
 dependencies[] = entity
 dependencies[] = rules

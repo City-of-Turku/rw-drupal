@@ -1,5 +1,5 @@
 api = 2
-core = 7.60
+core = 7.63
 
 projects[drupal][type] = core
 
@@ -7,6 +7,7 @@ projects[rules] = 2.11
 projects[token] = 1.7
 projects[variable] = 2.5
 projects[views] = 3.20
+projects[views_bulk_operations] = 3.5
 projects[views_bootstrap] = 3.2
 projects[services] = 3.20
 projects[services_views] = 1.3
@@ -35,10 +36,11 @@ projects[facetapi_pretty_paths] = 1.4
 projects[transliteration] = 3.2
 projects[addressfield] = 1.3
 projects[i18n] =1.26
+projects[l10n_update] = 2.1
 projects[libraries] = 2.5
 projects[ds] = 2.16
 projects[panels] = 3.9
-projects[file_entity] = 2.22
+projects[file_entity] = 2.25
 projects[media] = 2.21
 projects[module_filter] = 2.1
 projects[ckeditor] = 1.18
@@ -50,5 +52,5 @@ projects[telephone_validation] = 1.0-beta1
 projects[date] = 2.10
 projects[email] = 1.3
 projects[field_default_token] = 1.3
-projects[bootstrap] = 3.21
+projects[bootstrap] = 3.22
 
